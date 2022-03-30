@@ -8,7 +8,6 @@ import kotlinx.coroutines.*
 import kotlin.math.cos
 import kotlin.math.sin
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var container: FrameLayout
@@ -37,7 +36,8 @@ class MainActivity : AppCompatActivity() {
     private fun refillTank() {
         fuel = 5
         refillButton.visibility = View.GONE
-        infoText.text = this.getString(R.string.fuel_info, fuel.toString())
+        infoText.text = getString(R.string.push_to_start)
+        infoText.append(getString(R.string.fuel_info, fuel.toString()))
     }
 
     private fun moveCarIconRandomly() {
@@ -53,9 +53,9 @@ class MainActivity : AppCompatActivity() {
                 delay(500)
                 moveCarIconToCorner()
             }
-            infoText.append(this.getString(R.string.fuel_info, fuel.toString()))
+            infoText.append(getString(R.string.fuel_info, fuel.toString()))
         } else {
-            infoText.append("\n ${this.getString(R.string.out_of_gas)}")
+            infoText.append("\n ${getString(R.string.out_of_gas)}")
             refillButton.visibility = View.VISIBLE
         }
     }
@@ -92,6 +92,7 @@ class MainActivity : AppCompatActivity() {
             .translationY(parentCenterY - carIcon.height /2)
             .setDuration(1000)
             .start()
+        if (fuel == 0) infoText.append(getString(R.string.exploration_completed))
     }
 
     override fun onDestroy() {

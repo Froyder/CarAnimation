@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">LameCarAnimation</string>
-    <string name="out_of_gas">Out of gas!</string>
+    <string name="out_of_gas">Out of fuel!</string>
     <string name="refill_tank">Refill tank</string>
-    <string name="push_to_start">Tap car icon to start your ride!</string>
+    <string name="push_to_start">Tap rover to explore your path!</string>
     <string name="fuel_info">\nYou got fuel for %s rides left</string>
+    <string name="exploration_completed">\nYour exploration is completed!</string>
 </resources>
